@@ -14,10 +14,10 @@ namespace DadateJsonMsSQLServer
 {
     public partial class Form1 : Form
     {
-        ModelDb modelDb;
-        List<Data> dataList = null;
-        Data data = null;
-        Client client = null;
+        ModelDb modelDb; 
+        List<Data> dataList = null; //Для временного хранения коллекции объектов.
+        Data data = null; //Для хранения 1 элемента.
+        Client client = null; //Для работы с контекстом.
 
         public Form1()
         {
@@ -36,6 +36,8 @@ namespace DadateJsonMsSQLServer
                 {
                     listBoxRows.Items.Add(item);
                 }
+
+                MessageBox.Show("Данные загружены!", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
