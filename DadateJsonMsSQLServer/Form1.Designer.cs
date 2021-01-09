@@ -32,7 +32,7 @@ namespace DadateJsonMsSQLServer
             this.checkedListBoxRowsDadata = new System.Windows.Forms.CheckedListBox();
             this.listBoxRows = new System.Windows.Forms.ListBox();
             this.buttonGetEmailDB = new System.Windows.Forms.Button();
-            this.buttonSubmitDadate = new System.Windows.Forms.Button();
+            this.buttonSubmitDadata = new System.Windows.Forms.Button();
             this.buttonUpdateRows = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -60,15 +60,17 @@ namespace DadateJsonMsSQLServer
             this.buttonGetEmailDB.TabIndex = 2;
             this.buttonGetEmailDB.Text = "Получить email из БД";
             this.buttonGetEmailDB.UseVisualStyleBackColor = true;
+            this.buttonGetEmailDB.Click += new System.EventHandler(this.buttonGetEmailDB_Click);
             // 
-            // buttonSubmitDadate
+            // buttonSubmitDadata
             // 
-            this.buttonSubmitDadate.Location = new System.Drawing.Point(345, 336);
-            this.buttonSubmitDadate.Name = "buttonSubmitDadate";
-            this.buttonSubmitDadate.Size = new System.Drawing.Size(110, 59);
-            this.buttonSubmitDadate.TabIndex = 3;
-            this.buttonSubmitDadate.Text = "Отправить данные в Dadata";
-            this.buttonSubmitDadate.UseVisualStyleBackColor = true;
+            this.buttonSubmitDadata.Location = new System.Drawing.Point(345, 336);
+            this.buttonSubmitDadata.Name = "buttonSubmitDadata";
+            this.buttonSubmitDadata.Size = new System.Drawing.Size(110, 59);
+            this.buttonSubmitDadata.TabIndex = 3;
+            this.buttonSubmitDadata.Text = "Отправить данные в Dadata";
+            this.buttonSubmitDadata.UseVisualStyleBackColor = true;
+            this.buttonSubmitDadata.Click += new System.EventHandler(this.buttonSubmitDadata_Click);
             // 
             // buttonUpdateRows
             // 
@@ -78,6 +80,7 @@ namespace DadateJsonMsSQLServer
             this.buttonUpdateRows.TabIndex = 4;
             this.buttonUpdateRows.Text = "Изменить строки в БД";
             this.buttonUpdateRows.UseVisualStyleBackColor = true;
+            this.buttonUpdateRows.Click += new System.EventHandler(this.buttonUpdateRows_Click);
             // 
             // Form1
             // 
@@ -85,7 +88,7 @@ namespace DadateJsonMsSQLServer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonUpdateRows);
-            this.Controls.Add(this.buttonSubmitDadate);
+            this.Controls.Add(this.buttonSubmitDadata);
             this.Controls.Add(this.buttonGetEmailDB);
             this.Controls.Add(this.listBoxRows);
             this.Controls.Add(this.checkedListBoxRowsDadata);
@@ -100,7 +103,7 @@ namespace DadateJsonMsSQLServer
         private System.Windows.Forms.CheckedListBox checkedListBoxRowsDadata;
         private System.Windows.Forms.ListBox listBoxRows;
         private System.Windows.Forms.Button buttonGetEmailDB;
-        private System.Windows.Forms.Button buttonSubmitDadate;
+        private System.Windows.Forms.Button buttonSubmitDadata;
         private System.Windows.Forms.Button buttonUpdateRows;
     }
 }
