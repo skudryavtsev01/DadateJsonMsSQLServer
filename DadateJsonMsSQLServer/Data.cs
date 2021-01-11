@@ -10,6 +10,6 @@ namespace DadateJsonMsSQLServer
     {
         public int id;
         public string OldData;
-        public string NewData = "";
+        public string NewData;
     }
 }

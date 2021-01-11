@@ -47,9 +47,9 @@ namespace DadateJsonMsSQLServer
 
         private void buttonSubmitDadata_Click(object sender, EventArgs e)
         {
-            List<Client> clientList = modelDb.Client.ToList<Client>();
+            List<Client> clientList = modelDb.Client.ToList();
 
-            clientList.ForEach(item =>{dataList.Add(new Data { id = item.Id, OldData = item.Email, NewData=item.Email});});
+            clientList.ForEach(item =>{dataList.Add(new Data { id = item.Id, OldData = item.Email, NewData=item.Email});}); //ШАГ 3
 
             var api = new CleanClient("7868dd299cace51f81edef339d7c4dd0bdeb0212", "b14a16a5e346cc9a853bcde62a6e55afb86fe2fb");
 
@@ -59,8 +59,8 @@ namespace DadateJsonMsSQLServer
                 if (dadata.email != null) //Чтобы убрать не читаемые данные иначе Exception
                 {
                     checkedListBoxRowsDadata.Items.Add(dadata.email, (dadata.qc == "4"));
-                    data = dataList.Where(c => c.OldData.Contains(item)).First();
-                    if (dataList.Remove(data)) { dataList.Add(new Data { id = data.id, OldData = data.OldData, NewData = dadata.email }); }
+                    data = dataList.Where(c => c.OldData.Contains(item)).First(); // ШАГ 3
+                    if (dataList.Remove(data)) { dataList.Add(new Data { id = data.id, OldData = data.OldData, NewData = dadata.email }); } // ШАГ 3
                 }
             }
         }
